@@ -1,7 +1,7 @@
 var returnApi = require('../connectors/apiGithub')
 const router = require("express").Router();
 
-router.get('/', async function (req, res) {
+router.get('/api', async function (req, res) {
     try {
         var returnMessage = await returnApi.returnDataGithub();
         res.status(200).send(returnMessage);

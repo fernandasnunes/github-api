@@ -16,7 +16,7 @@ app.use(cors())
 
 
 //Define the route files here
-app.use('/teste', githubRoutes);
+app.use('/searchGithub', githubRoutes);
 
 
 //Starts the application server 
