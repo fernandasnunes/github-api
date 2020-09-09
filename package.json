@@ -1,0 +1,19 @@
+{
+  "name": "api-chatbot",
+  "version": "1.0.0",
+  "description": "aplicação realizada para integração do blip",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Fernanda Nunes",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0"
+  }
+}
