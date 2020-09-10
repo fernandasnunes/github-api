@@ -14,6 +14,7 @@
   "author": "Fernanda Nunes",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.20.0"
+    "axios": "^0.20.0",
+    "express": "^4.17.1"
   }
 }

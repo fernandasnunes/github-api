@@ -5,11 +5,23 @@ function returnDataGithub() {
   return axios.get(url).then((response) => {
     let filterTweets = response.data.map((result) => {
       let newObject = {
-        name: result.name,
-        full_name: result.full_name,
-        description: result.description,
-        imagem: result.owner.avatar_url,
-        date: result.created_at
+        type: "application/vnd.lime.collection+json",
+        content: {
+          itemType: "application/vnd.lime.document-select+json",
+          items: [
+            {
+              header: {
+                type: "application/vnd.lime.media-link+json",
+                value: {
+                  title: result.name,
+                  text: result.full_name,
+                  type: "image/jpeg",
+                  uri: result.imagem
+                },
+              },
+            },
+          ],
+        },
       };
       return newObject;
     });
