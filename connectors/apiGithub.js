@@ -7,39 +7,95 @@ function returnDataGithub() {
   return axios.get(url).then((response) => {
     let filterTweets = response.data.map((result) => {
       let newObject = 
-        {
-          "to": "553199990000@0mn.io",
-          "type": "application/vnd.lime.collection+json",
-          "content": {
-              "itemType": "application/vnd.lime.container+json",
-              "items": [
-                  {
-                      "type": "application/vnd.lime.media-link+json",
-                      "value": {
-                          "text": "Welcome to our store!",
-                          "type": "image/jpeg",
-                          "uri": "http://www.petshoplovers.com/wp-content/uploads/2014/03/CUIDADOS-B%C3%81SICOS-PARA-CRIAR-COELHOS.jpg"
-                      }
-                  },
-                  {
-                      "type": "application/vnd.lime.select+json",
-                      "value": {
-                          "text": "Choose what you need",
-                          "options": [
-                              {
-                                  "order": 1,
-                                  "text": "See our stock"
-                              },
-                              {
-                                  "order": 2,
-                                  "text": "Follow an order"
-                              }
-                          ]
-                      }
-                  }
-              ]
-          }
-      }
+      {
+        "itemType": "application/vnd.lime.document-select+json",
+        "items": [
+            {
+                "header": {
+                    "type": "application/vnd.lime.media-link+json",
+                    "value": {
+                        "title": "Title",
+                        "text": "This is a first item",
+                        "type": "image/jpeg",
+                        "uri": "http://www.isharearena.com/wp-content/uploads/2012/12/wallpaper-281049.jpg"
+                    }
+                },
+                "options": [
+                    {
+                        "label": {
+                            "type": "application/vnd.lime.web-link+json",
+                            "value": {
+                                "title": "Link",
+                                "uri": "http://www.adoteumgatinho.org.br"
+                            }
+                        }
+                    },
+                    {
+                        "label": {
+                            "type": "text/plain",
+                            "value": "{{random.guid}}"
+                        },
+                        "value": {
+                            "type": "application/json",
+                            "value": {
+                                "key1": "value1",
+                                "key2": "2"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "header": {
+                    "type": "application/vnd.lime.media-link+json",
+                    "value": {
+                        "title": "Title 2",
+                        "text": "This is another item",
+                        "type": "image/jpeg",
+                        "uri": "http://www.freedigitalphotos.net/images/img/homepage/87357.jpg"
+                    }
+                },
+                "options": [
+                    {
+                        "label": {
+                            "type": "application/vnd.lime.web-link+json",
+                            "value": {
+                                "title": "Second link",
+                                "text": "Weblink",
+                                "uri": "https://pt.dreamstime.com/foto-de-stock-brinquedo-pl%C3%A1stico-amarelo-do-pato-image44982058"
+                            }
+                        }
+                    },
+                    {
+                        "label": {
+                            "type": "text/plain",
+                            "value": "Second text"
+                        },
+                        "value": {
+                            "type": "application/json",
+                            "value": {
+                                "key3": "value3",
+                                "key4": "4"
+                            }
+                        }
+                    },
+                    {
+                        "label": {
+                            "type": "text/plain",
+                            "value": "More one text"
+                        },
+                        "value": {
+                            "type": "application/json",
+                            "value": {
+                                "key5": "value5",
+                                "key6": "6"
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
       
       
       return newObject;
