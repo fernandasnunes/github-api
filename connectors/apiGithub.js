@@ -28,7 +28,20 @@ function returnDataGithub() {
   return newObject
   
     });
-    return Object.assign({}, filterTweets);
+
+    // let formatArray = filterTweets.replace(/[[\]]/g,'');
+    // let arraySSP = (JSON.parse(formatArray))
+    // return arraySS P
+    let json = JSON.stringify(filterTweets).replace(/[[\]]/g,'');
+
+
+  //   function formatData(array) {
+  //     let formatArray = array.replace(/[[\]]/g,'')
+  //     let arraySSP = (JSON.parse(formatArray))
+  //     return arraySSP
+  // }
+    return json
+  
   });
 }
 
