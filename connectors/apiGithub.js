@@ -5,29 +5,53 @@ function returnDataGithub() {
   return axios.get(url).then((response) => {
     let filterTweets = response.data.map((result) => {
       let newObject = {
-        type: "application/vnd.lime.collection+json",
-        content: {
-          itemType: "application/vnd.lime.document-select+json",
-          items: [
-            {
-              header: {
-                type: "application/vnd.lime.media-link+json",
-                value: {
-                  title: result.name,
-                  text: result.full_name,
-                  type: "image/jpeg",
-                  uri: result.imagem
-                },
-              },
-            },
-          ],
+        itemType: "application/vnd.lime.document-select+json",
+        items: [
+          {
+            header: {
+              type: "application/vnd.lime.media-link+json",
+              "value": {
+                title: "Title",
+                text: "Thisisafirstitem",
+                type: "image/jpeg",
+                uri: result.image
+        
+      }
+      },
+      options: [
+        {
+          label: {
+            type: "application/vnd.lime.web-link+json",
+            value: {
+              title: "Link",
+              uri: "http://www.adoteumgatinho.org.br"
+            }
+          }
         },
-      };
+        {
+          label: {
+            type: "text/plain",
+            "value": "Text 1"
+          },
+          value: {
+            type: "application/json",
+            value: {
+              key1: "value1",
+              key2: "2"
+            }
+          }
+        }
+
+      
+      ]
+      }]}
       return newObject;
     });
     return filterTweets;
   });
 }
+
+
 
 module.exports = {
   returnDataGithub: returnDataGithub,
