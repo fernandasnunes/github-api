@@ -17,7 +17,7 @@ function returnDataGithub() {
                         "title": result.name + result.full_name,
                         "text": result.description,
                         "type": "image/jpeg",
-                        "uri": result.avatar_url
+                        "uri": result.owner.avatar_url
                     }
                 },
             }
