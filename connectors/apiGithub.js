@@ -44,7 +44,7 @@ function returnDataGithub() {
       
       return newObject;
     });
-    return filterTweets;
+    return filterTweets[0];
   });
 }
 
