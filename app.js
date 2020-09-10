@@ -1,7 +1,6 @@
 
 const express = require("express");
 const app = express();
-const cfenv = require("cfenv");
 const cors = require("cors")
 
 //Import route files
