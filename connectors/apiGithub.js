@@ -25,10 +25,10 @@ function returnDataGithub() {
         ]
     }
       
-      
-      return newObject;
+  return newObject
+  
     });
-    return filterTweets[0];
+    return Object.assign({}, filterTweets);
   });
 }
 
