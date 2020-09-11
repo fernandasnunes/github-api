@@ -32,7 +32,7 @@ function returnDataGithub() {
     // let formatArray = filterTweets.replace(/[[\]]/g,'');
     // let arraySSP = (JSON.parse(formatArray))
     // return arraySS P
-    let json = JSON.stringify(filterTweets).replace(/[[\]]/g,'');
+    let json = JSON.stringify(filterTweets).slice(1, -1)
 
 
   //   function formatData(array) {
