@@ -5,6 +5,7 @@ const Lime = require('lime-js');
 function returnDataGithub() {
   url = "https://api.github.com/orgs/takenet/repos?q=language:C#&order=cresc";
   return axios.get(url).then((response) => {
+    filter = response.data.map((result) =>{
       var newObject = {
         "itemType": "application/vnd.lime.document-select+json",
         "items": [
@@ -12,7 +13,7 @@ function returnDataGithub() {
                 "header": {
                     "type": "application/vnd.lime.media-link+json",
                     "value": {
-                        "title": "Title",
+                        "title": "tal",
                         "text": "This is a first item",
                         "type": "image/jpeg",
                         "uri": "http://www.isharearena.com/wp-content/uploads/2012/12/wallpaper-281049.jpg"
@@ -113,6 +114,10 @@ function returnDataGithub() {
 
   
   });
+  let json = JSON.stringify(filter).slice(1, -1)
+return json
+
+})
 }
 
 
