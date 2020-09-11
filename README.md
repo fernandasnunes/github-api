@@ -13,7 +13,7 @@ Getting up and running is as easy as 1, 2, 3, 4.
 
 2. Install your dependencies
   
-    >cd github-api
+    >cd search-github
     start your app
 
 3. npm start
