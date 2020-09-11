@@ -3,7 +3,7 @@ const router = require("express").Router();
 
 router.get('/', async function (req, res) {
     try {
-        var returnMessage = await returnApi.returnDataGithub();
+        var returnMessage = await returnApi.returnData();
         res.status(200).send(returnMessage);
     }
     catch (err) {

@@ -1,7 +1,6 @@
 var axios = require("axios");
-const Lime = require("lime-js");
 
-function returnDataGithub() {
+function returnData() {
   url = "https://api.github.com/orgs/takenet/repos?q=language:C#&order=cresc";
   return axios.get(url).then((response) => {
     let filter = response.data.map((result) => {
@@ -15,7 +14,7 @@ function returnDataGithub() {
           header: {
             type: "application/vnd.lime.media-link+json",
             value: {
-              title: filter[0].name,
+              title: filter[0].full_name,
               text: filter[0].description,
               type: "image/jpeg",
               uri: "https://avatars1.githubusercontent.com/u/4369522?s=200&v=4",
@@ -26,7 +25,7 @@ function returnDataGithub() {
           header: {
             type: "application/vnd.lime.media-link+json",
             value: {
-              title: filter[1].name,
+              title: filter[1].full_name,
               text: filter[1].description,
               type: "image/jpeg",
               uri: "https://avatars1.githubusercontent.com/u/4369522?s=200&v=4",
@@ -37,7 +36,7 @@ function returnDataGithub() {
           header: {
             type: "application/vnd.lime.media-link+json",
             value: {
-              title: filter[2].name,
+              title: filter[2].full_name,
               text: filter[2].description,
               type: "image/jpeg",
               uri: "https://avatars1.githubusercontent.com/u/4369522?s=200&v=4",
@@ -48,7 +47,7 @@ function returnDataGithub() {
           header: {
             type: "application/vnd.lime.media-link+json",
             value: {
-              title: filter[3].name,
+              title: filter[3].full_name,
               text: filter[3].description,
               type: "image/jpeg",
               uri: "https://avatars1.githubusercontent.com/u/4369522?s=200&v=4",
@@ -59,7 +58,7 @@ function returnDataGithub() {
           header: {
             type: "application/vnd.lime.media-link+json",
             value: {
-              title: filter[4].name,
+              title: filter[4].full_name,
               text: filter[4].description,
               type: "image/jpeg",
               uri: "https://avatars1.githubusercontent.com/u/4369522?s=200&v=4",
@@ -74,5 +73,5 @@ function returnDataGithub() {
 }
 
 module.exports = {
-  returnDataGithub: returnDataGithub,
+  returnData: returnData
 };
